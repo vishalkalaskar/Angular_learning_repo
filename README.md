@@ -28,7 +28,9 @@ Funtion call on Button click
  when one function calling other function 
   use this.Function_Name()  -->this.indicate the current state of class or beloning of class
   variable define only in function.
-
+  
+  method with parameter --->  handleWithpar(val:string)
+  
 Define Data Type in Angular
     name:string;
     name:string="peter";
@@ -46,5 +48,5 @@ Define Data Type in Angular
 
     // Function types
     let calculate: (x: number, y: number) => number;
-
+   
     

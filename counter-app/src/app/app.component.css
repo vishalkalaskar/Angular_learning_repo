@@ -1,0 +1,25 @@
+.btn{
+    width: 80px;
+    height: 80px;
+    margin:10px ;
+    border-radius: 50%;
+    color:black;
+    cursor: pointer;
+
+}
+.bg-green
+{
+  background-color: green;
+}
+.bg-white
+{
+    background-color: white;
+}
+.bg-orange
+{
+     background-color: orange;
+}
+.btn:hover
+{
+  border:1px solid white;
+}

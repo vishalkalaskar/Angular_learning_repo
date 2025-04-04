@@ -1,0 +1,21 @@
+{
+	"name": "Angular Dev Container",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
+	"features": {
+	  "ghcr.io/devcontainers/features/node:1": {
+		"version": "20"
+	  }
+	},
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "dbaeumer.vscode-eslint",
+		  "esbenp.prettier-vscode",
+		  "streetsidesoftware.code-spell-checker",
+		  "angular.ng-template"  // Angular Language Service
+		]
+	  }
+	},
+	"postCreateCommand": "npm install -g @angular/cli && npm install"
+  }
+  

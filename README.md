@@ -30,6 +30,7 @@ Funtion call on Button click
   variable define only in function.
 
 Define Data Type in Angular
+    name:string;
     name:string="peter";
     data:string|number ="hello"; data will accept string and number both.
     data:any=true; //accept any type.

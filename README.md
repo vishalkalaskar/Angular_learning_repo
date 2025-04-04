@@ -23,6 +23,27 @@ In-line component inline style and template.
    ng g c country --inline-style --inline-template file are .ts and .spec.ts
 
 Funtion call on Button click
-  
+  <button (click)="funtion_Name()"></button>
+
+ when one function calling other function 
+  use this.Function_Name()  -->this.indicate the current state of class or beloning of class
+  variable define only in function.
+
+Define Data Type in Angular
+    name:string="peter";
+    data:string|number ="hello"; data will accept string and number both.
+    data:any=true; //accept any type.
+
+    // Basic types
+    let name: string = 'John';
+    let age: number = 30;
+    let isActive: boolean = true;
+
+    // Arrays
+    let names: string[] = ['John', 'Jane'];
+    let users: Array<{id: number, name: string}> = [];
+
+    // Function types
+    let calculate: (x: number, y: number) => number;
 
     

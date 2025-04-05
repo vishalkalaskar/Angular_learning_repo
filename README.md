@@ -50,3 +50,6 @@ Define Data Type in Angular
     let calculate: (x: number, y: number) => number;
    
     
+api call using angular
+   creating services -ng g service services/uservices
+   app.config.ts ---> provideHttpClient()  --becoz fo app.module.ts file is not thier.

@@ -33,7 +33,7 @@ export class AppComponent {
       }
       else
       {
-          alert("count is zero");
+          alert("count is zero value");
       }
 
     }

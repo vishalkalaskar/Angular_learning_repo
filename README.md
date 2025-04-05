@@ -50,6 +50,13 @@ Define Data Type in Angular
     let calculate: (x: number, y: number) => number;
    
     
-api call using angular
+api call using angular --my-app3
    creating services -ng g service services/uservices
    app.config.ts ---> provideHttpClient()  --becoz fo app.module.ts file is not thier.
+
+   Event--> when click on ui part it called Event. click,onchange,blur,focus,input change. (this are events).
+     
+    input field value --event.target as HTMLInputEvent;
+
+    template refrences variable--> <input type="email" placeholder="enter mail" #emailfiled>
+    

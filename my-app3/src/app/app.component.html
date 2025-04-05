@@ -26,3 +26,44 @@
     </tr>
   </tbody>
 </table>
+
+<br>
+<br>
+<button (click)="clickEvent($event)">click event</button>
+
+<br>
+<br>
+
+<div (mouseenter)="clickEvent($event)"  
+style="background-color: green; width: 100px; height: 100px;" >
+
+</div>
+<br>
+<br>
+
+<div (mouseleave)="clickEvent($event)"  
+style="background-color: blue; width: 100px; height: 100px;" >
+
+</div>
+
+<br>
+<br>
+<input
+  type="text"
+  (input)="inputEvent($event)"
+  name="user"
+  placeholder="Type something..." />
+
+
+  <br>
+  <br>
+  <h3>input filed : {{displayname}}</h3>   
+  <input type="text" value="{{vari}}" (input)="getVariable($event)" name="variabel">
+  <button (click)="getvalueb()">Get Value</button>
+  <button (click)="setName()">set value</button>
+  <hr>
+  <!-- <input type="email" value="{{mail}}" placeholder="enter mail" #emailfield> -->
+  <input type="email"  placeholder="enter mail" #emailfiled [value]="mail">
+  <button (click)="getEmail(emailfiled.value)">get Mail</button>
+  <button (click)="setMail()"> set Mail</button>
+  <h2>Mail: {{ mail }}</h2>

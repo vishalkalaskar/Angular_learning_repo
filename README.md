@@ -87,9 +87,7 @@ Control flow Statements
      //if else block
        @if(x>10){<div></div>}
        @else(){}
-       
-     apply if else condition
-     Hide and show with button click
-     Toggle with button click
-     Update button text with toggle
-     
+
+   Else if Condition
+       --
+   

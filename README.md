@@ -60,3 +60,36 @@ api call using angular --my-app3
 
     template refrences variable--> <input type="email" placeholder="enter mail" #emailfiled>
     
+Style Option  ---app-style-css
+  component style
+    particular component file apply it self css file not other component file.
+    same style are using multiple component  --app-->style.css(change in this file)
+
+
+  Global style/ Make new file for global style
+     
+    when want custome css file go to angular.json in "styles":["src/styles.css","src/theme.css"]  --if multiple file having in css last file css will apply.
+  internal style
+    inline style apply for div or tag.
+  style in components.ts file
+    styles:['h1{color: black;  background-color:white;}']
+  Load multiple css files in component
+    styleUrls:['./profile.component.css','./button.bnt.css']
+
+Control flow Statements 
+     If else |Hide-show| Toggle
+
+     define property and html for if else 
+      use directive 
+
+       @if(dispaly){<div></div>}
+
+     //if else block
+       @if(x>10){<div></div>}
+       @else(){}
+       
+     apply if else condition
+     Hide and show with button click
+     Toggle with button click
+     Update button text with toggle
+     

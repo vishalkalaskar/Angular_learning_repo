@@ -1,0 +1,53 @@
+<h1>CSS style option</h1>
+<app-profile></app-profile>
+
+<hr>
+<br>
+
+<h1>If Else | Control Flow</h1>
+<button (click)="funhid()">click</button>
+@if(display)
+{
+  <div style="width:200px;height: 200px; background-color: green;">
+
+  </div>
+}
+<hr>
+<!-- <button (click)="togllefun()">toglle button</button> -->
+<button (click)="togllefun()">{{tdiv ?'shwo orange div':'show red div'}}</button>
+@if(tdiv)
+{
+  <div style="width:200px;height: 200px; background-color: orange;">
+
+  </div>
+}
+@else {
+  <div style="width:200px;height: 200px; background-color: red;">
+
+  </div>
+}
+
+<hr>
+<h1>Else if Condition</h1>
+<button (click)="elseiffun(1)">blue</button>
+<button (click)="elseiffun(2)">red</button>
+<button (click)="elseiffun(3)">green</button>
+<button (click)="elseiffun(4)">yellow</button>
+<input type="text">
+
+@if(color==1)
+{
+  <div style="background-color: blue;width: 100px;height: 100;"></div>
+}
+@else if(color==2)
+{
+  <div style="background-color: red;width: 100px;height: 100;"></div>
+}
+@else if(color==3)
+{
+  <div style="background-color: green;width: 100px;height: 100;"></div>
+}
+@else
+{
+  <div style="background-color: yellow;width: 100px;height: 100;"></div>
+}

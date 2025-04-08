@@ -29,25 +29,105 @@
 
 <hr>
 <h1>Else if Condition</h1>
-<button (click)="elseiffun(1)">blue</button>
-<button (click)="elseiffun(2)">red</button>
-<button (click)="elseiffun(3)">green</button>
-<button (click)="elseiffun(4)">yellow</button>
-<input type="text">
+<button (click)="togalfun(1)">blue</button>
+<button (click)="togalfun(2)">red</button>
+<button (click)="togalfun(3)">green</button>
+<button (click)="togalfun(4)">yellow</button>
+<br>
+<input (click)="inputvalue($event)" type="text">
 
 @if(color==1)
 {
-  <div style="background-color: blue;width: 100px;height: 100;"></div>
+  <div style="background-color: blue;width: 100px;height: 100px;"></div>
 }
 @else if(color==2)
 {
-  <div style="background-color: red;width: 100px;height: 100;"></div>
+  <div style="background-color: red;width: 100px;height: 100px;"></div>
 }
 @else if(color==3)
 {
-  <div style="background-color: green;width: 100px;height: 100;"></div>
+  <div style="background-color: green;width: 100px;height: 100px;"></div>
 }
 @else
 {
-  <div style="background-color: yellow;width: 100px;height: 100;"></div>
+  <div style="background-color: yellow;width: 100px;height: 100px;"></div>
 }
+
+<hr>
+<br>
+<h1>Switch case</h1>
+<button (click)="HandleswitchColor('red')">red </button>
+<button (click)="HandleswitchColor('green')">green</button>
+<button (click)="HandleswitchColor('orange')">orange</button>
+<button (click)="HandleswitchColor('pink')">default</button>
+<br>
+<input type="text" (input)="switchinput($event)" placeholder="enter color..">
+@switch (switchcolor) 
+{
+  @case('red')
+  {
+    <h1 style="background-color: red;color:black;">Red color</h1>
+  }
+  @case('green')
+  {
+    <h1 style="background-color: green;color: black;">green color</h1>
+  }
+  @case('orange')
+  {
+    <h1 style="background-color: orange;color:black;">Orange color</h1>
+  }
+  @default {
+    <h1 style="background-color: pink;color:black;">pink color</h1>
+  }
+}
+
+<h1>For loop</h1>
+
+@for(user of Users;track user)
+{
+    <h2>{{user}}</h2>
+}
+<br>
+<h2>Student List :</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>lastName</td>
+      <td> </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stud of Students ">
+      <td>{{stud.id}}</td>
+      <td>{{stud.name}}</td>
+      <td>{{stud.lastName}}</td>
+      <td>
+        <button (click)="getName(stud.name)">getName</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<hr>
+
+<h3>Single</h3>
+<h1>Counter App Using Singles</h1>
+<div style="text-align: center;">
+    <h2 class="count">{{counter()}}</h2>
+    <div>
+      <button class="btn bg-green" (click)="decrement()">Decrease</button>
+      <button class="btn bg-white" (click)="reset()">Reset</button>
+      <button class="btn bg-orange" (click)="increment()">Increase</button>
+    </div>
+</div>
+<br>
+<h1>{{data()}}</h1>
+<h1>computed {{count()}}</h1>
+<button (click)="update()">update Single</button>
+
+<h2>computed signals example</h2>
+<h2>{{z()}}</h2>
+<button (click)="showSum()">show sum</button>

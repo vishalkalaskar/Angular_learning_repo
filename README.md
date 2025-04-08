@@ -89,5 +89,60 @@ Control flow Statements
        @else(){}
 
    Else if Condition
-       --
-   
+      @if()
+      @else if()
+      @else()
+    
+-input.value is always of type string, so you need to convert it to a number before assigning.
+Switch Case --condition more than 6.
+@switch(variable)
+{
+  @case(value){}
+  @case(value){}
+  @case(value){}
+}
+
+For Loop in Template File 
+    @for(user of Users ; track user)
+    {
+      <h2>{{user}}</h2>
+    }
+  in table
+    <tr *ngFor="let user of Users">
+      <td>{{user.id}}</td>
+
+Signals
+  1.what are Signals?
+    A signal is a wrapper around a value that notifies interested consumers when that value changes. Signals can contain any value, from primitives to complex data structures
+
+    const count = signal(0);
+
+  2.type of Signals?
+     Type	Description
+        signal()-->   Writable signal (you can read and update)
+        computed()--> Read-only derived signal
+        effect()-->   Side-effect that runs when signals change
+  3.Define Signals
+    import { signal } from '@angular/core';
+
+    const counter = signal(0); // creates a signal with initial value 0
+
+  3.update signals value
+    counter(); // returns the current value
+
+    update the value  
+    counter.set(5);         // sets value to 5
+    counter.update(v => v + 1); // increments
+    counter.update(v => v - 1); // decrements
+
+  4.Make a counter example of signals --(use set,update method)
+
+Data Type with Singles
+ data = single(10); ---get the data value use **data();**
+  
+  computed() signals---don't change onces declared. it constant.it is read only. if it's having dependency it will.
+
+  count :Signal<number>=computed(()=>200);
+  data:WritableSingnal<number | string> = signal(10);
+ interview question
+    can we change computed signals values?

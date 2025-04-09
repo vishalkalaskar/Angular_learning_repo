@@ -146,3 +146,22 @@ Data Type with Singles
   data:WritableSingnal<number | string> = signal(10);
  interview question
     can we change computed signals values?
+
+For Loop Contextual Variable
+  1. what are the contextual variable
+  2.$count,$index,$last,$first,$odd and $even ,empty block with for loop 
+
+  Two Way Binding--[(ngModel)] --import { FormsModule } from '@angular/forms';
+
+ Dynamic Style
+  <h1 [style.backgroundColor]="color"
+      [style.fontSize.px]="fontsize" >dynamic color</h1>  //pt is %
+
+Directive in Angular
+  what is Directive  in Angular
+    A Directive in Angular is a class that allows you to attach behavior to DOM elements (like changing appearance, structure, or behavior dynamically).
+  Type of Directive
+      1. Component	Technically a directive with a template (HTML). Most used directive type.
+      2. Structural	Changes the structure of the DOM (e.g., adds/removes elements).
+      3. Attribute	Changes the appearance or behavior of an element.
+  

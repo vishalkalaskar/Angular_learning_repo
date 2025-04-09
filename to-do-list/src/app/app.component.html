@@ -1,0 +1,14 @@
+<h1>To do List</h1>
+<input [(ngModel)]="task" type="text" placeholder="Enter new the Task">
+<button (click)="addTask()">Add Task</button>
+
+@for(task of taskList;track task.id)
+{
+   <ul class="task-list">
+      <li>{{task.id}}</li>
+      <li>{{task.task}}</li>
+      <li><button (click)="Delete(task.id)">Delete</button></li>
+   </ul>
+  
+}
+

@@ -131,3 +131,21 @@
 <h2>computed signals example</h2>
 <h2>{{z()}}</h2>
 <button (click)="showSum()">show sum</button>
+
+<br>
+<hr>
+<h2>for loop contextual variable</h2>
+@for(user of Users;track user)
+{
+ 
+    <p>this oure {{$index+1}} of {{user}}</p>
+    <p>total record : {{$count}}</p>
+}
+
+<br>
+<hr>
+<h2>Two way binding</h2>
+<input [(ngModel)]="bind" type="text" placeholder="enter value">
+<p>You typed: {{ bind }}</p>
+
+<h2>Directive</h2>

@@ -4,9 +4,11 @@ import { ProfileComponent } from "./profile/profile.component";
 import { CommonModule } from '@angular/common';
 import { ThisReceiver } from '@angular/compiler';
 import { signal,effect,Signal,computed} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProfileComponent,CommonModule],
+  imports: [RouterOutlet, ProfileComponent,CommonModule,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -113,4 +115,7 @@ export class AppComponent {
     this.x.set(100);
     console.log(this.z());
   }
+
+  //two way binding
+  bind ="";
 }

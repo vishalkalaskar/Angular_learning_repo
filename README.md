@@ -165,3 +165,21 @@ Directive in Angular
       2. Structural	Changes the structure of the DOM (e.g., adds/removes elements).
       3. Attribute	Changes the appearance or behavior of an element.
   
+<tr *ngFor="left user of User">
+<h2 *ngIf="variable">show and hide </h2>
+<h2 *ngIf="variable; else variable_hide">show and hide </h2>
+
+<div [ngSwitch]="selectedColor" style="margin-top: 20px;">
+  <p *ngSwitchCase="'red'" style="color: red;">You selected RED</p>
+  <p *ngSwitchCase="'green'" style="color: green;">You selected GREEN</p>
+  <p *ngSwitchCase="'blue'" style="color: blue;">You selected BLUE</p>
+  <p *ngSwitchDefault>Please select a color</p>
+  </div>
+
+Basic Routing in Angular
+  <nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/about">About</a>
+  <a routerLink="/contact">contact</a>
+</nav>
+<router-outlet></router-outlet> --without <router-outlet/> you can't navigate things.

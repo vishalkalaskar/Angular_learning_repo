@@ -149,3 +149,12 @@
 <p>You typed: {{ bind }}</p>
 
 <h2>Directive</h2>
+<h4>*ngIf Directive</h4>
+<p *ngIf="show">this *ngIf show and hide</p>
+<button (click)="ifhide()">showandhide</button>
+
+<h2 *ngIf="loggintrue; else logginfalse">longing fail</h2>
+<!-- <h2 *ngIf="!loggintrue">Logging successful</h2> -->
+<ng-template #logginfalse>logging successfull.</ng-template>
+<br>
+<button (click)="loging()">login</button>

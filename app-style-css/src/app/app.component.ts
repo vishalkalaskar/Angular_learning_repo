@@ -118,4 +118,15 @@ export class AppComponent {
 
   //two way binding
   bind ="";
+  show=true;
+  ifhide()
+  {
+    this.show=!this.show;
+  }
+  loggintrue = false;
+
+loging() {
+  this.loggintrue = !this.loggintrue;
 }
+}
+

@@ -165,15 +165,15 @@ Directive in Angular
       2. Structural	Changes the structure of the DOM (e.g., adds/removes elements).
       3. Attribute	Changes the appearance or behavior of an element.
   
-<tr *ngFor="left user of User">
-<h2 *ngIf="variable">show and hide </h2>
-<h2 *ngIf="variable; else variable_hide">show and hide </h2>
+<tr ngFor="left user of User">
+<h2 ngIf="variable">show and hide </h2>
+<h2 ngIf="variable; else variable_hide">show and hide </h2>
 
 <div [ngSwitch]="selectedColor" style="margin-top: 20px;">
-  <p *ngSwitchCase="'red'" style="color: red;">You selected RED</p>
-  <p *ngSwitchCase="'green'" style="color: green;">You selected GREEN</p>
-  <p *ngSwitchCase="'blue'" style="color: blue;">You selected BLUE</p>
-  <p *ngSwitchDefault>Please select a color</p>
+  <p ngSwitchCase="'red'" style="color: red;">You selected RED</p>
+  <p ngSwitchCase="'green'" style="color: green;">You selected GREEN</p>
+  <p ngSwitchCase="'blue'" style="color: blue;">You selected BLUE</p>
+  <p ngSwitchDefault>Please select a color</p>
   </div>
 
 Basic Routing in Angular
@@ -182,4 +182,27 @@ Basic Routing in Angular
   <a routerLink="/about">About</a>
   <a routerLink="/contact">contact</a>
 </nav>
-<router-outlet></router-outlet> --without <router-outlet/> you can't navigate things.
+<router-outlet></router-outlet> --without <router-outlet/> you can't navigate things 
+RouterOutlet,RouterLink --in import that particular component ts.
+
+npm install bootstrap --bootstrap
+    Then, in your angular.json or styles.css (depending on your setup), add:
+    /* styles.css or styles.scss */
+    import "bootstrap/dist/css/bootstrap.min.css";  mention this in  main.ts
+
+Or if you're using Vite (with standalone setup), include it in main.ts or styles.css
+
+ng add @angular/material ---angular material
+
+while routing 404 page is need./Page not found.
+  
+ 1. what is 404 page or Page not found
+   user want try access the not exists in application so show 404 page(Page Not found).
+ 2. Make component for 404 page
+    ng g c 404 page.
+    {path="**",component:PageNotFount} --  ** this wild card rounting.   (what is wild card routing).
+ 
+pass Data from one Page to Other
+  1. pass data with router link
+  2. pass data with button click
+  3. pass data with router

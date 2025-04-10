@@ -1,0 +1,6 @@
+/* app.component.css */
+.nav-link.active {
+    font-weight: bold;
+    color: #0d6efd !important;
+  }
+  

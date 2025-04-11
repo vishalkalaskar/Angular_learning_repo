@@ -83,3 +83,47 @@
 <div class="container mt-4">
   <router-outlet></router-outlet>
 </div>
+<hr>
+<h2>Reactive forms</h2>
+<form [formGroup]="data" (ngSubmit)="onsubmit()">
+  <input type="text" formControlName="name" placeholder="Enter your name">
+  <div *ngIf="name?.invalid && name?.touched" style="color:red">
+    <small *ngIf="name?.hasError('required')">Name is required</small>
+  </div>
+  <br>
+
+  <input type="email" formControlName="email" placeholder="Enter your email">
+  <div *ngIf="email?.invalid && email?.touched" style="color:red">
+    <small *ngIf="email?.hasError('required')">Email is required</small>
+    <small *ngIf="email?.hasError('email')">Invalid email</small>
+  </div>
+  <br>
+
+  <input type="password" formControlName="pass" placeholder="Enter password">
+  <div *ngIf="pass?.invalid && pass?.touched" style="color:red">
+    <small *ngIf="pass?.hasError('required')">Password is required</small>
+    <small *ngIf="pass?.hasError('minlength')">Min 6 characters</small>
+  </div>
+  <br>
+
+  <button type="submit">Submit</button>
+</form>
+<br>
+<h2>Template forms</h2>
+<hr>
+<form #templateform="ngForm" (ngSubmit)="onsubmittemplate(templateform)">
+  <input type="text" name="gender" placeholder="Enter your gender" ngModel required #gender="ngModel">
+  <span *ngIf="gender.invalid && gender.touched" style="color: red;">Gender is required</span>
+  <br>
+
+  <input type="text" name="number" placeholder="Enter your number" ngModel required #number="ngModel">
+  <span *ngIf="number.invalid && number.touched" style="color: red;">Number is required</span>
+  <br>
+
+  <input type="text" name="country" placeholder="Enter country" ngModel required #country="ngModel">
+  <span *ngIf="country.invalid && country.touched" style="color: red;">Country is required</span>
+  <br>
+
+  <button type="submit" [disabled]="templateform.invalid || !templateform.touched">Submit</button>
+</form>
+

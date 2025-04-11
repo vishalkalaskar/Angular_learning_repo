@@ -277,13 +277,13 @@ Dynamic Routing
       Automatically tracks form state
       
       implementation 
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <form #form(same)="ngForm" (ngSubmit)="onSubmit(form(same))">
         <input name="username" ngModel required>
         <input name="email" ngModel email>
         <button type="submit">Submit</button>
       </form>
 
-      onSubmit(form: NgForm) {
+      onSubmit(form(same): NgForm) {
   console.log(form.value);
 }
 

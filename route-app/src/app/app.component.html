@@ -56,12 +56,30 @@
     </div>
   </div>
 </nav>
-<p [routerLink]="['profile',{name:'vishal kalaskar'}]" routerLinkActive="active">go to profile</p>
+<!-- <p ><a [routerLink]="['profile',{name:'vishal kalaskar'}]" routerLinkActive="active">go to profile</a> </p> -->
+ <p><a routerLink="/profile">got to profile</a></p>
 <hr>
 <button (click)="goToprofile()">go to profile</button>
 <!-- Display routed components here -->
+ <hr>
+<h2>user list</h2>
+<ul>
+    <li><a [routerLink]="['user',101,'vishal']">101</a></li>
+    <li><a [routerLink]="['user',102,'dinesh']">102</a></li>
+    <li><a [routerLink]="['user',103,'kay']">103</a></li>
+    <li><a [routerLink]="['user',104,'raj']">104</a></li>
+</ul>
+
+
+<h3>Reactive form </h3>
+<br>
+<form [formGroup]="form" (ngSubmit)="loginfunction()">
+  <input formControlName="username" placeholder="Username">
+  <br>
+  <input type="password" formControlName="password" placeholder="Password">
+  <br>
+  <button type="submit">Submit</button>
+</form>
 <div class="container mt-4">
   <router-outlet></router-outlet>
 </div>
-
-

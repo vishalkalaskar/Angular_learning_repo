@@ -12,7 +12,7 @@ export class ProfileComponent {
   userName:string|null='';
   userId: string | null = null;
   userN: string | null = null;
-
+  userNamedata:any='';
 
 constructor(private route:ActivatedRoute,private router: Router){}
  ngOnInit(){
@@ -23,6 +23,11 @@ constructor(private route:ActivatedRoute,private router: Router){}
    this.route.queryParamMap.subscribe(params=>{
     this.userId = params.get('id');
     this.userN = params.get('name');
+   })
+
+   this.route.data.subscribe(data=>{
+     this.userNamedata=data;
+      console.log(data);
    })
 
  }

@@ -111,7 +111,7 @@ For Loop in Template File
     <tr *ngFor="let user of Users">
       <td>{{user.id}}</td>
 
-Signals
+**Signals**
   1.what are Signals?
     A signal is a wrapper around a value that notifies interested consumers when that value changes. Signals can contain any value, from primitives to complex data structures
 
@@ -137,7 +137,7 @@ Signals
 
   4.Make a counter example of signals --(use set,update method)
 
-Data Type with Singles
+**Data Type with Singles**
  data = single(10); ---get the data value use **data();**
   
   computed() signals---don't change onces declared. it constant.it is read only. if it's having dependency it will.
@@ -157,7 +157,7 @@ For Loop Contextual Variable
   <h1 [style.backgroundColor]="color"
       [style.fontSize.px]="fontsize" >dynamic color</h1>  //pt is %
 
-Directive in Angular
+**Directive in Angular**
   what is Directive  in Angular
     A Directive in Angular is a class that allows you to attach behavior to DOM elements (like changing appearance, structure, or behavior dynamically).
   Type of Directive
@@ -194,7 +194,7 @@ Or if you're using Vite (with standalone setup), include it in main.ts or styles
 
 ng add @angular/material ---angular material
 
-while routing 404 page is need./Page not found.
+**while routing 404 page is need./Page not found.**
   
  1. what is 404 page or Page not found
    user want try access the not exists in application so show 404 page(Page Not found).
@@ -202,7 +202,89 @@ while routing 404 page is need./Page not found.
     ng g c 404 page.
     {path="**",component:PageNotFount} --  ** this wild card rounting.   (what is wild card routing).
  
-pass Data from one Page to Other
+**pass Data from one Page to Other**
+   //ActiveRouter and Router ---import this.
   1. pass data with router link
-  2. pass data with button click
-  3. pass data with router
+      <p [routerLink]="['profile',{name:'vishal kalaskar'}]" routerLinkActive="active">go to profile</p>
+      //using QueryParams 
+      <a [routerLink]="['/user']" [queryParams]="{ id: 101, name: 'Vishal' }">User Info</a>
+
+  2. pass data with button click---on button click
+      this.router.navigate(['profile'], { queryParams: { id: 101, name: 'John' } });
+      
+      this.route.data.subscribe(data=>{
+      console.log(data);
+   })
+
+
+**#The ngOnInit() method is used to run any code after the component is fully ready**
+
+Dynamic Routing
+  1. what is dynamic routing   --at router use params and queryparams
+     making dynamic url that accept new data but in single page.
+     { path: 'user/:id', component: UserComponent }
+     {path:'user/:id/:name', component:UserComponent}
+ 
+  ** Forms in Angular **
+    1. Reactive  Form 
+      Great for complex forms, dynamic fields, or when you need more control and unit testing.
+       
+       import { ReactiveFormsModule } from '@angular/forms';
+
+       Key Features:
+      Programmatic form creation
+
+      Full control via FormGroup, FormControl, and FormBuilder
+
+      Reactive validations
+
+      Better for large-scale apps
+
+      #TS file
+        form: FormGroup;
+
+        constructor(private fb: FormBuilder) {
+          this.form = this.fb.group({
+            username: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]]
+          });
+        }
+
+        submitForm() {
+          console.log(this.form.value);
+        }
+     
+      #html
+       
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <input formControlName="username" placeholder="Username">
+      <input formControlName="email" placeholder="Email">
+      <button type="submit">Submit</button>
+    </form>
+
+    2. Template Form
+       Best for simple forms, small projects, or when you want to use Angular directly in HTML templates.
+      
+      import { FormsModule } from '@angular/forms';
+
+      ✅ Key Features:
+      Uses [(ngModel)] for two-way binding
+
+      Less code in .ts file
+
+      Validation via directives (required, minlength, etc.)
+
+      Automatically tracks form state
+      
+      implementation 
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <input name="username" ngModel required>
+        <input name="email" ngModel email>
+        <button type="submit">Submit</button>
+      </form>
+
+      onSubmit(form: NgForm) {
+  console.log(form.value);
+}
+
+

@@ -455,3 +455,98 @@ export class ReversePipe implements PipeTransform {
     They support operators (like .map(), .filter()).
 
     They're more powerful than Promises.
+
+
+    Install json server and make API
+       https://github.com/typicode/json-server
+
+**Define Data Type for API result**
+    src 
+     --- interface  --folder
+            ---User.ts 
+                export interface
+                {
+                  id: number;
+                  name: string;
+                  email: string;
+                }
+
+   1. what is data type
+      A data type defines the kind of value a variable can hold. In TypeScript (used in Angular), examples include:
+        string, number, boolean, any, unknown, array, object, etc.
+
+   2. what is interface
+      An interface in TypeScript allows you to define a structure (or blueprint) of an object — like a contract for the shape of data.
+      
+        {
+          "id": 1,
+          "name": "Vishal",
+          "email": "vishal@example.com"
+        }
+
+
+      ✏️ Syntax:
+      interface User {
+        id: number;
+        name: string;
+        email: string;
+      }
+
+🔸 It doesn’t generate any JavaScript code — it’s just for TypeScript type checking.
+
+   3. define data type with interface
+
+        user:User[]=[];
+
+       #service
+         getUsers():Observable<User[]>
+         {
+           const url = "http://localhost:3000/users";
+           return this.http.get<User[]>(url);
+         }
+
+        ngOnInit()
+        {
+            this.UserService.getUser().subscribe((data:User[])=>{
+              this.users=data;
+              console.log(this.users);
+            })
+        }
+   4. Apply data type to result
+   5. interview question.
+       Question	                                                            Good Answer
+What is an interface in Angular?     	An interface is a TypeScript structure to define a contract for the shape of an object.
+Why use interfaces with API responses?   	To make the data type-safe, easier to debug, and get IntelliSense support.
+Can we use any instead of interface?	    Yes, but it defeats the purpose of TypeScript. You lose type safety.
+How to apply an interface to an HTTP result?  	By specifying it in the generic of HttpClient.get<T>() method.
+
+Observable<User> vs Observable<User[]>
+getUser(): Observable<User> {
+  return this.http.get<User>('https://api.example.com/user/1');
+}
+Use this when your API returns a single user object, like:
+
+{
+  "id": 1,
+  "name": "Vishal",
+  "email": "vishal@example.com"
+}
+✔️ Best For:
+**Viewing or editing a specific user**
+**Login, profile, or detail view**
+
+✅ When to Use Observable<User[]>
+
+getUsers(): Observable<User[]> {
+  return this.http.get<User[]>('https://api.example.com/users');
+}
+Use this when the API returns an array/list of users, like:
+
+[
+  { "id": 1, "name": "Vishal" },
+  { "id": 2, "name": "Ankit" }
+]
+✔️ Best For:
+Listing users in a table
+Admin dashboards
+Pagination/search features

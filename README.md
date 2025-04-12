@@ -210,6 +210,9 @@ ng add @angular/material ---angular material
       <a [routerLink]="['/user']" [queryParams]="{ id: 101, name: 'Vishal' }">User Info</a>
 
   2. pass data with button click---on button click
+  
+     {path:'profile',component:ProfileComponent,data:{name:'vishal'}}  ---in route file mention insideOf inline mentioning.
+
       this.router.navigate(['profile'], { queryParams: { id: 101, name: 'John' } });
       
       this.route.data.subscribe(data=>{

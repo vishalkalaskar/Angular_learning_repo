@@ -3,11 +3,14 @@ import {Router, RouterLink, RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule,FormBuilder, FormGroup, Validators, FormControl, FormControlDirective, FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ChildComponent } from './child/child.component';
+import { eventNames } from 'process';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink,ReactiveFormsModule,CommonModule,FormsModule],
+  imports: [RouterOutlet,RouterLink,ReactiveFormsModule,CommonModule,FormsModule,ChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -84,5 +87,12 @@ export class AppComponent {
   onsubmittemplate(templateform:NgForm)
   {
     console.log(templateform.value);
+  }
+
+  parentMessage = 'Hello from Parent!';
+  messageFromChild = '';
+
+  handleChildMessage(message: string) {
+    this.messageFromChild = message;
   }
 }

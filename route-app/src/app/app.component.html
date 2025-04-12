@@ -127,3 +127,14 @@
   <button type="submit" [disabled]="templateform.invalid || !templateform.touched">Submit</button>
 </form>
 
+<br>
+<hr>
+<h2>parent and child communication</h2>
+<app-child [message]="parentMessage"></app-child>
+ <!-- <app-parent></app-parent> -->
+
+ <hr>
+ <h3>child say to parent</h3>
+
+ <app-child (childevent)="handleChildMessage($event)"></app-child>
+ <h2>Message form child:{{messageFromChild}}</h2>

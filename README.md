@@ -210,7 +210,7 @@ ng add @angular/material ---angular material
       <a [routerLink]="['/user']" [queryParams]="{ id: 101, name: 'Vishal' }">User Info</a>
 
   2. pass data with button click---on button click
-  
+
      {path:'profile',component:ProfileComponent,data:{name:'vishal'}}  ---in route file mention insideOf inline mentioning.
 
       this.router.navigate(['profile'], { queryParams: { id: 101, name: 'John' } });
@@ -290,4 +290,168 @@ Dynamic Routing
   console.log(form.value);
 }
 
+**Pass Data parent to child or via versa**
+parent to child -- @Input -- is directive
+child to parent --@Output --is directive   
+ @Output() childevent: EventEmitter<string> = new EventEmitter<string>();
+ @Output() childevent : new EventEmitter();
 
+
+ **Pipes**
+  1. what are pipes in Angular
+
+    Pipes are used to transform data in templates.
+    They work like filters and formatting tools directly inside HTML.
+    Syntax: {{ value | pipeName }}
+       
+  2. Example of pipe
+     
+    1. lowercase
+    2. titlecase
+    3. date
+    4. currency
+    5. percent
+    6. slice
+    7. json
+
+  3. Pipe with Params
+     <p>{{ today | date:'shortDate' | uppercase }}</p> <!-- Output: 4/12/25 -->
+
+  4. Apply Multiple pips
+
+     ng generate pipe reverse
+
+   //revers.pips.ts --file name
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'reverse' })
+export class ReversePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.split('').reverse().join('');
+  }
+}
+
+//html
+ <p>{{ 'Angular' | reverse }}</p> <!-- Output: ralugnA -->
+
+ **Component Lif Cycle Methods**
+   1. what is life cycle methods
+
+     Lifecycle methods (or hooks) are special functions in Angular that get called automatically at specific stages of a component's life — from creation to destruction.
+
+     They help you control logic like:
+
+      Data fetching
+      DOM updates
+      Cleanup tasks
+      Debuggin
+
+   2. life cycle methods list
+            Hook Name	                           Purpose
+      ngOnChanges()	                Called when input properties change
+      ngOnInit()	                  Called once when component initializes
+      ngDoCheck()                 	Custom change detection logic
+      ngAfterContentInit()    	    Called once after <ng-content> is projected
+      ngAfterContentChecked()     	Called after content is checked
+      ngAfterViewInit()           	Called after component’s views (child views too)
+      ngAfterViewChecked()         	Called after the views are checked
+      ngOnDestroy()	                Cleanup just before component is removed
+  
+   3. interview question
+      Q1: What is the first and last lifecycle hook to run?
+          First: constructor → then ngOnChanges → then ngOnInit
+          Last: ngOnDestroy
+
+      Q2: When is ngOnChanges() called?
+          When an @Input() property is changed by the parent component.
+
+      Q3: Difference between ngOnInit() and constructor()?
+          constructor() is TypeScript's native class constructor — used for dependency injection.
+
+          ngOnInit() is Angular-specific, used for initialization logic after inputs are set.
+
+      Q4: When to use ngDoCheck()?
+         When you need custom change detection (rare, use carefully).
+
+      Q5: Which hook is used to handle cleanup (unsubscribe, clearInterval)?
+          ngOnDestroy()
+
+      Q6: How to run logic after child components load?
+          Use ngAfterViewInit()
+
+**Services in Angular**
+  1. what are services -- (working with APIS MUST USE SERVICES)
+    A service in Angular is a reusable class that provides logic, data, or functionality — shared across components.
+
+    Common use cases:
+    Business logic
+    Fetching data from APIs
+    State management
+    Utility functions
+    Logging or authentication
+    Services are injected into components using Dependency Injection (DI).
+
+  2. Make service
+     ng g s services/user  for services(folder)-->user.services
+     ng g s user  --in app directly userservices will creates
+
+  3. Get and use data from service file 
+  4. interview questions.
+      Question	                                           Answer
+      What is a service in Angular?	                          A reusable class used for sharing logic or data across components.
+      How are services injected?	                            Using Angular's Dependency Injection system.
+      What is @Injectable() used for?	                        Marks a class as available to be injected as a dependency.
+      What does providedIn: 'root' do?	                      Registers the service globally at the root level (Singleton).
+      Can you share data between components 
+      using a service?	                                       Yes, via service properties and methods.
+      When is ngOnInit used in relation to services?	         To call service methods when the component initializes.
+      How to make service available to only one module?	       Use the providers array in that module's metadata.
+      Difference between Singleton service and Scoped service?	Singleton is shared app-wide. Scoped is created
+                                                                 per module or component.
+                                      
+ Why use Observable and subscribe() when calling an API?
+🔹 1. Asynchronous Nature of HTTP Calls
+    API calls are asynchronous, meaning:
+
+    You don’t get the response instantly.
+
+    The app shouldn’t freeze while waiting for the API.
+
+    So, we use Observables to handle data that comes in the future.
+
+🔹 2. Observable is like a Stream
+    Think of it like a stream of data. It will emit the response once it's ready.
+
+    ts
+    getUsers(): Observable<User[]> {
+      return this.http.get<User[]>('https://api.example.com/users');
+    }
+    It doesn't fetch the data immediately — it just sets up the stream. To actually receive the data, you need to subscribe to it.
+
+🔹 3. subscribe() is used to consume the Observable
+      ts
+      this.myService.getUsers().subscribe(data => {
+        console.log(data); // You get the API response here
+      });
+      It starts listening to the Observable.
+
+      It gets called when the data arrives.
+
+      You can also handle errors and completion:
+
+      ts
+      this.myService.getUsers().subscribe({
+        next: data => console.log(data),
+        error: err => console.error('Error', err),
+        complete: () => console.log('Done loading users')
+      });
+      
+🔹 4. Angular's HttpClient returns an Observable
+    Angular's HttpClient is built to return Observables because:
+
+    They're cancelable.
+
+    They support operators (like .map(), .filter()).
+
+    They're more powerful than Promises.

@@ -4,7 +4,7 @@ import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule,FormBuilder, FormGroup, Validators, FormControl, FormControlDirective, FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ChildComponent } from './child/child.component';
-import { eventNames } from 'process';
+
 
 
 
@@ -95,4 +95,8 @@ export class AppComponent {
   handleChildMessage(message: string) {
     this.messageFromChild = message;
   }
+
+  myname:string="anil";
+  date= new Date();
+  messagepipe = 'hello angular pipes';
 }

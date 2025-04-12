@@ -138,3 +138,20 @@
 
  <app-child (childevent)="handleChildMessage($event)"></app-child>
  <h2>Message form child:{{messageFromChild}}</h2>
+<br>
+<hr>
+ <h2>Pipes formatting</h2>
+
+ <h2>{{ myname | uppercase}}</h2>
+ <h2>{{myname | titlecase}}</h2>
+ <h2>{{myname | lowercase}} </h2>
+
+ <h2>{{date}}</h2>
+ 
+ <h2>{{date | date}}</h2>
+ 
+ <h2>{{date | date:"fullDate"}}</h2>
+ <h2>{{date | date:"shortDate"}}</h2>
+ <h2>{{date | date:"hh:mm:ss"}}</h2>
+
+ <p>{{ messagepipe | uppercase | slice:0:5 }}</p> <!-- Output: HELLO -->

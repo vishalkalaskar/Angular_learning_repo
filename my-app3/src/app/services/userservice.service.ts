@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UserserviceService {
 
   constructor(private http: HttpClient) {}
-
+ 
   getUsers(): Observable<any> {
     return this.http.get('https://jsonplaceholder.typicode.com/users');
   }

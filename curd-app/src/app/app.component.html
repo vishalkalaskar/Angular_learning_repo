@@ -1,0 +1,68 @@
+<h1>Curd Operation of User</h1>
+<br>
+
+<form [formGroup]="UserForm" (ngSubmit)="submitForm()">
+  <input formControlName="name" placeholder="name">
+  <br>
+  <input formControlName="username" placeholder="Username">
+  <br>
+  <input formControlName="email" placeholder="Email">
+  <br>
+  <button type="submit" [disabled]="UserForm.invalid">Submit</button>
+  <br>
+</form> 
+<br>
+<button (click)="getAllUserData()">Get Users</button>
+<br>
+<table *ngIf="tableVisiable" border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Company</th>
+      <th>Delete</th>
+      <th>Update/PUT</th>
+      <th>PATCH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of User">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address?.city }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.website }}</td>
+      <td>{{ user.company?.name }}</td>
+      <td><button (click)="DeleteUser(user.id)">Delete</button></td>
+      <td><button (click)="UpdateUserDetails(user)">Update</button></td>
+      <td><button (click)="openPatchModal(user)">PATCH</button></td>
+    </tr>
+  </tbody>
+</table>
+<!-- Modal -->
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <h2>{{ isPatchMode ? 'Patch User' : 'Update User' }}</h2>
+    <form (ngSubmit)="isPatchMode ? patchUser() : updateUser()">
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="selectedUser.name" name="name" required>
+      <br>
+      <label>Username:</label>
+      <input type="text" [(ngModel)]="selectedUser.username" name="username" [disabled]="isPatchMode ? true : false">
+      <br>
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="selectedUser.email" name="email" required>
+      <br>
+      <button type="submit">{{ isPatchMode ? 'Patch' : 'Update' }}</button>
+      <button type="button" (click)="closeModal()">Cancel</button>
+    </form>
+  </div>
+</div>
+

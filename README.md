@@ -556,3 +556,17 @@ Admin dashboards
 Pagination/search features
 
 **curd-app learning points**
+   //cloning object to modify the user data
+   this.selectedUser = { ...user }; // clone to avoid two-way binding
+
+   [(ngModel)]="selectedUser.username" name="username" [disabled]="isPatchMode ? true : false">
+
+   //dynamic button switching 
+    <button type="submit">{{ isPatchMode ? 'Patch' : 'Update' }}</button>
+
+      UpdateUser(id: number, user: User): Observable<User> {
+    return this.http.put<User>(`${this.url}/${id}`, user);
+  }
+   
+  PatchUser(id: number, partialUser: Partial<User>): Observable<User> {
+    return this.http.patch<User>(`${this.url}/${id}`, partialUser);

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../../Interface/User';
+import { response } from 'express';
+import { userInfo } from 'os';
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +38,7 @@ export class UserService {
   PatchUser(id: number, partialUser: Partial<User>): Observable<User> {
     return this.http.patch<User>(`${this.url}/${id}`, partialUser);
   }
+
+  # make interface for your api response to handle instead of any
+    --user.ts   -->take references from this.
 }

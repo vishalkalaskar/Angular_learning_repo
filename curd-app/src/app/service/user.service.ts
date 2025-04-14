@@ -38,7 +38,4 @@ export class UserService {
   PatchUser(id: number, partialUser: Partial<User>): Observable<User> {
     return this.http.patch<User>(`${this.url}/${id}`, partialUser);
   }
-
-  # make interface for your api response to handle instead of any
-    --user.ts   -->take references from this.
 }

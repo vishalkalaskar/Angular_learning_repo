@@ -566,7 +566,9 @@ Pagination/search features
 
       UpdateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.url}/${id}`, user);
-  }
    
   PatchUser(id: number, partialUser: Partial<User>): Observable<User> {
     return this.http.patch<User>(`${this.url}/${id}`, partialUser);
+
+     # make interface for your api response to handle instead of any
+    --user.ts   -->take references from this.

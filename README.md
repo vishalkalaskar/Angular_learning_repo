@@ -176,7 +176,7 @@ For Loop Contextual Variable
   <p ngSwitchDefault>Please select a color</p>
   </div>
 
-Basic Routing in Angular
+**Basic Routing in Angular**
   <nav>
   <a routerLink="/">Home</a>
   <a routerLink="/about">About</a>
@@ -184,6 +184,10 @@ Basic Routing in Angular
 </nav>
 <router-outlet></router-outlet> --without <router-outlet/> you can't navigate things 
 RouterOutlet,RouterLink --in import that particular component ts.
+
+# lazy laoding 
+  //app.routes.ts
+    {path:'admin',loadComponent:()=>import('./admin/admin.component').then((c)=>c.AdminComponent)}
 
 npm install bootstrap --bootstrap
     Then, in your angular.json or styles.css (depending on your setup), add:
@@ -550,3 +554,5 @@ Use this when the API returns an array/list of users, like:
 Listing users in a table
 Admin dashboards
 Pagination/search features
+
+**curd-app learning points**

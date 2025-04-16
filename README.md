@@ -572,3 +572,8 @@ Pagination/search features
 
      # make interface for your api response to handle instead of any
     --user.ts   -->take references from this.
+  
+  #convert json to ts
+   transform.tools
+  #event api
+  https://freeapi.miniprojectideas.com/index.html

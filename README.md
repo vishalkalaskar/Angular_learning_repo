@@ -583,3 +583,15 @@ Pagination/search features
    transform.tools
   #event api
   https://freeapi.miniprojectideas.com/index.html
+
+  to use font-awsome and bootstrap in libe
+    
+     npm install bootstrap font-awesome
+
+     angular.json file and add the CSS files to the styles array:
+
+      "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "node_modules/font-awesome/css/font-awesome.min.css",
+        "src/styles.css"
+      ]

@@ -1,0 +1,9 @@
+.login_main {
+    background-color: #e9ecef; /* light gray */
+    height: 100vh;
+  }
+  
+  .login_div {
+    background-color: white; /* override inherited background */
+  }
+  

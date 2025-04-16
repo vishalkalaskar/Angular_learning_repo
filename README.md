@@ -189,6 +189,12 @@ RouterOutlet,RouterLink --in import that particular component ts.
   //app.routes.ts
     {path:'admin',loadComponent:()=>import('./admin/admin.component').then((c)=>c.AdminComponent)}
 
+    { 
+      path:'',
+      redirectTo :'home',
+      pathMatch:'full'
+    }
+
 npm install bootstrap --bootstrap
     Then, in your angular.json or styles.css (depending on your setup), add:
     /* styles.css or styles.scss */

@@ -1,0 +1,17 @@
+ng generate guard auth
+
+export const authGuard: CanActivateFn = (route, state) => { const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+if (isLoggedIn) { return true; } else { // Redirect to login if not logged in window.alert('Access denied. Please login first.'); window.location.href = '/'; // fallback in standalone return false; } };
+
+#router export const routes: Routes = [ {path:'',component:LoginComponent}, {path:'index',component:IndexHtmlComponent,canActivate: [authGuard]} ];
+
+#loginpage.ts
+
+submitForm() { if (this.form.value.username === 'admin' && this.form.value.password === '1234') { localStorage.setItem('loggedIn', 'true'); // Set login flag console.log('Login successful'); this.router.navigate(['/index']); } else { console.log('Invalid credentials'); localStorage.removeItem('loggedIn'); this.router.navigate(['']); } }
+
+#when project are not trackable rm -rf my-app/.git # Remove its internal Git repo git add my-app/ # Stage the folder git commit -m "Add my-app project folder" git push origin main # Push to remote
+
+Common Breakpoints (used in Bootstrap too):
+
+Device Type Width (px) Media Query Example Extra small (mobile) <576px @media (max-width: 575.98px) Small (tablet) ≥576px and <768px @media (max-width: 767.98px) Medium (tablet) ≥768px and <992px @media (max-width: 991.98px) Large (laptop) ≥992px and <1200px @media (max-width: 1199.98px) Extra large ≥1200px @media (min-width: 1200px)

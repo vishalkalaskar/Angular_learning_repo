@@ -1,13 +1,14 @@
 import { Component, ConstructorProvider } from '@angular/core';
 import { ReactiveFormsModule ,Validators,FormBuilder,FormGroup,FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
-import { IndexHtmlComponent } from '../index.html/index.html.component';
+
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule,IndexHtmlComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  //styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'] // ✅ FIXED
 })
 export class LoginComponent {
 

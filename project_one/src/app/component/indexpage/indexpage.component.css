@@ -1,0 +1,54 @@
+.main{
+    background-color: lightgrey;
+ } 
+  
+ .bg1{
+      background-color: #1230AE;
+      color:white;
+      height:25%;
+      width: 100%;
+      text-size-adjust:15px;
+  }
+  
+  .bg2{
+     background-color: #6C48C5;
+ }
+ .bg3{
+     background-color: #C68FE6;
+ }
+ .bg4{
+  background-color: #1230AE;
+  color:white;
+  height:25%;
+  width: 100%;
+  text-size-adjust:15px;
+ }
+ .bg5{
+   background-color:white;
+   color:black;
+   height:25%;
+   width: 100%;
+ 
+ }
+ 
+  /* Extra small devices (phones) */
+  @media (max-width: 576px) {
+     .container-fluid {
+       padding: 1rem !important;
+     }
+ 
+     h1 {
+       font-size: 1.5rem;
+     }
+ 
+     p {
+       font-size: 0.9rem;
+     }
+   }
+ 
+   /* Medium and below (tablets and phones) */
+   @media (max-width: 768px) {
+     .container-fluid:nth-child(3) {
+       display: none; /* Hide 2nd div (dark bg) on smaller screens */
+     }
+   }

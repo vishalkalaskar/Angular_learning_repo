@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { LoginComponent } from './component/login/login.component';
-import { TranineregistrationComponent } from './component/tranineregistration/tranineregistration.component';
+import {Router, RouterLink, RouterLinkActive, RouterOutlet,NavigationEnd } from '@angular/router';
+import { IndexpageComponent } from './component/indexpage/indexpage.component';
+import { filter } from 'rxjs/operators';
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,LoginComponent,RouterLink,RouterLinkActive,TranineregistrationComponent,],
+  imports: [RouterOutlet,RouterLink,RouterLinkActive,IndexpageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'my-app';
+
 }

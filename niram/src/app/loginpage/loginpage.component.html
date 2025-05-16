@@ -1,0 +1,35 @@
+<div class="container-fluid min-vh-100 p-0 d-flex flex-column">
+  
+  <!-- Main section: 2-column layout -->
+  <div class="row flex-grow-1 g-0">
+    
+    <!-- Left section -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #6A9C89;">
+      <h2 class="text-white">Welcome to Vehicle Portal</h2>
+    </div>
+
+    <!-- Right section -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #16423C;">
+      <div class="border p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="mb-3">
+            <input formControlName="username" type="text" class="form-control" placeholder="Enter Username">
+          </div>
+          <div class="mb-3">
+            <input formControlName="password" type="password" class="form-control" placeholder="Enter Password">
+          </div>
+          <div class="d-grid">
+            <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="height: 40px; background-color: #C4DAD2; text-align: center; line-height: 40px; font-size: 14px;">
+    © 2025 Your Company. All rights reserved.
+  </div>
+
+</div>

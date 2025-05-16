@@ -595,3 +595,7 @@ Pagination/search features
         "node_modules/font-awesome/css/font-awesome.min.css",
         "src/styles.css"
       ]
+
+       "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]

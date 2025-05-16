@@ -16,11 +16,24 @@ Common Breakpoints (used in Bootstrap too):
 
 Device Type Width (px) Media Query Example Extra small (mobile) <576px @media (max-width: 575.98px) Small (tablet) ≥576px and <768px @media (max-width: 767.98px) Medium (tablet) ≥768px and <992px @media (max-width: 991.98px) Large (laptop) ≥992px and <1200px @media (max-width: 1199.98px) Extra large ≥1200px @media (min-width: 1200px)
 
+**color palate**
+https://color.adobe.com/create/color-wheel
+https://mui.com/material-ui/customization/color/
+https://www.colorsandfonts.com/
+https://flatuicolors.com/
+https://www.happyhues.co/
+https://coolors.co/
+https://colorhunt.co/
+
 #ready use UI material link
 1.https://material.angular.io or https://material.angular.dev/components/table/overview
+  -->ng add @angular/material
 2.https://primeng.org
+  -->npm install primeng primeicons
 3.https://ng.ant.design
+  -->ng add ng-zorro-antd
 4.https://akveo.github.io/nebular
+  -->
 5.https://valor-software.com/ngx-bootstrap
 
 **nirman project learning**

@@ -3,7 +3,7 @@ import { ReactiveFormsModule ,Validators,FormBuilder,FormGroup,FormControl} from
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  standalone: true,
+  //standalone: true,
   selector: 'app-loginpage',
   imports: [ReactiveFormsModule,RouterOutlet],
   templateUrl: './loginpage.component.html',

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule ,Validators,FormBuilder,FormGroup,FormControl} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-loginpage',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterOutlet],
   templateUrl: './loginpage.component.html',
   styleUrl: './loginpage.component.css'
 })

@@ -1,0 +1,33 @@
+.typing-text {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    font-size: 1.5 rem; /* adjust as needed */
+    animation: typing 8s steps(26, end) infinite;
+  }
+
+  .typing-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3rem;
+    width: 3rem;
+    aspect-ratio: 1/1;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3882/3882646.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scaleX(-1); /* flip horizontally */
+    animation: 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 26ch; }
+  }
+
+   @keyframes blink-caret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  } 

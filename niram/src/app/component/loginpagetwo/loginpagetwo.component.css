@@ -1,0 +1,172 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login_page {
+  min-height: 100vh;
+  background-color: #5f29a3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.login_container {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.login_left {
+  flex: 1 1 400px;
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login_content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login_content h2 span {
+  color: #5f29a3;
+  font-weight: bold;
+}
+
+.login_content input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.login_btn,
+.signup_btn {
+  padding: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.login_btn {
+  background-color: #e600e6;
+  color: white;
+}
+
+.signup_btn {
+  background-color: transparent;
+  border: 1px solid #5f29a3;
+  color: #5f29a3;
+}
+
+.social_links {
+  margin-top: 1rem;
+}
+
+.social_links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Right Section */
+/* .login_right {
+  flex: 1 1 400px;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  background-image: radial-gradient(circle at top left, #ff7ce5 20%, transparent 20%),
+                    radial-gradient(circle at bottom right, #7f00ff 20%, transparent 20%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  margin-top: 20%;
+
+} */
+ .login_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  background-image: radial-gradient(circle at top left, #ff7ce5 20%, transparent 20%),
+                    radial-gradient(circle at bottom right, #7f00ff 20%, transparent 20%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100%;
+  margin-top: 20%;
+} 
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .login_container {
+    flex-direction: column;
+  }
+
+  .login_right {
+    order: -1; /* Show image background on top */
+    height: 200px;
+  }
+
+  .login_left {
+    padding: 1.5rem;
+  }
+
+  .login_content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.typing-text {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    font-size: 1.5 rem; /* adjust as needed */
+    animation: typing 8s steps(26, end) infinite;
+  }
+
+  .typing-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3rem;
+    width: 3rem;
+    aspect-ratio: 1/1;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3882/3882646.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scaleX(-1); /* flip horizontally */
+    animation: 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 26ch; }
+  }
+
+   @keyframes blink-caret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  } 

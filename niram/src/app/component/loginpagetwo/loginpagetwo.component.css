@@ -92,7 +92,7 @@ body, html {
 }
 
 /* Right Section */
-/* .login_right {
+ .login_right {
   flex: 1 1 400px;
   background: linear-gradient(135deg, #7f00ff, #e100ff);
   background-image: radial-gradient(circle at top left, #ff7ce5 20%, transparent 20%),
@@ -100,11 +100,10 @@ body, html {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 300px;
-  margin-top: 20%;
+} 
+ /* .login_right {
 
-} */
- .login_right {
-  display: flex;
+  flex: 1 1 400px;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #7f00ff, #e100ff);
@@ -115,7 +114,7 @@ body, html {
   width: 50%;
   height: 100%;
   margin-top: 20%;
-} 
+}  */
 
 /* Responsive Layout */
 @media (max-width: 768px) {
@@ -154,10 +153,11 @@ body, html {
     height: 3rem;
     width: 3rem;
     aspect-ratio: 1/1;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/3882/3882646.png');
+    /* background-image: url('https://cdn-icons-png.flaticon.com/512/3882/3882646.png'); */
+    background-image: url('https://cdn-icons-png.flaticon.com/128/10112/10112476.png'); 
     background-size: contain;
     background-repeat: no-repeat;
-    transform: scaleX(-1); /* flip horizontally */
+    /*transform: scaleX(-1);  flip horizontally */
     animation: 0.75s step-end infinite;
   }
 

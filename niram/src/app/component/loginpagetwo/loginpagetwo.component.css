@@ -58,8 +58,8 @@ body, html {
   font-size: 1rem;
 }
 
-.login_btn,
-.signup_btn {
+.login_btn
+ {
   padding: 0.75rem;
   width: 100%;
   margin-top: 0.5rem;
@@ -67,28 +67,18 @@ body, html {
   border-radius: 6px;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease;
+} 
+
+.login_btn:disabled {
+  background-color: #d3cce3; /* Light lavender-like color when disabled */
+  cursor: not-allowed;
+  color: #888; /* Optional: muted text color */
 }
 
 .login_btn {
   background-color: #e600e6;
   color: white;
-}
-
-.signup_btn {
-  background-color: transparent;
-  border: 1px solid #5f29a3;
-  color: #5f29a3;
-}
-
-.social_links {
-  margin-top: 1rem;
-}
-
-.social_links a {
-  margin-right: 1rem;
-  text-decoration: none;
-  color: #333;
-  font-size: 0.9rem;
 }
 
 /* Right Section */
@@ -115,6 +105,14 @@ body, html {
   height: 100%;
   margin-top: 20%;
 }  */
+
+.login_message {
+  /* color: #ff4d4f; */
+   color: #7f00ff;
+  margin-top: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
 
 /* Responsive Layout */
 @media (max-width: 768px) {

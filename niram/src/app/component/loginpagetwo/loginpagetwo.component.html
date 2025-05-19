@@ -18,9 +18,12 @@
         </form>
         <div>
             <br>
-            <br>
-            <br>
+            <br>         
+        </div> 
+        <div class="login_message" *ngIf="loginError">
+           Invalid credentials. Please try again.
         </div>
+      
       </div>
     </div>
 
